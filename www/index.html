@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <link href="https://unpkg.com/maplibre-gl@3.x/dist/maplibre-gl.css" rel="stylesheet" />
+    <style>
+      body { margin: 0; }
+      #map { height: 100vh; }
+    </style>
+  </head>
+  <body>
+    <div id="map" />
+    <script src="https://unpkg.com/maplibre-gl@3.x/dist/maplibre-gl.js"></script>
+    <script>
+        const apiKey = "v1.public.eyJqdGkiOiI2MDZlYzcxMS03MjczLTQwMDAtYWE4My1hZmRlZmQzNTAxNDIifQBhpH9eSizedpJC_T_76ljD_dvrfrEcmHxBULnpNy1ISjY0Unc4kOiXCOv2Sm5QyB54q-ifIbc24TTSx-WpLR5Z88RVrDsFybymWWhJ7CKEp6DCkziqcqvf4V4fPdFSXTWmlfmhDt6uyFQ-3D6NfZ2aAq0he9PGH6C9EFokNrNSl7NdpvMLP10h2SxM6sIhB6igN4mabsDl3sfSKeKGG8eNOldEWAE-H0Yu-4I_gShOvn8ezCokk2B1h_nBHjeILbGGaLMh-UWe3L33C9F7AMgD4aoVK5hzUVNyF7yZPlXn85FmouHWUTZXWOuWS_RJNYjJngV3DKU--_oUjAYm3Ik.ZWU0ZWIzMTktMWRhNi00Mzg0LTllMzYtNzlmMDU3MjRmYTkx";
+      const mapName = "whereischarlie-map";
+      const region = "us-east-1";
+
+      const map = new maplibregl.Map({
+        container: "map",
+        style: `https://maps.geo.${region}.amazonaws.com/maps/v0/maps/${mapName}/style-descriptor?key=${apiKey}`,
+        center: [-123.115898, 49.295868],
+        zoom: 11,
+      });
+      map.addControl(new maplibregl.NavigationControl(), "top-left");
+    </script>
+  </body>
+</html>
+
